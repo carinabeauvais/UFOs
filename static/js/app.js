@@ -42,3 +42,29 @@ function buildTable(data) {
   //});
 
   //with the above function we loop through each object in the array, append a row to HTML table, add each value from the object into a cell
+
+
+ // now will add second function to filter the table. select function is common in D3 
+ // and selects first element that matches our selector string #datetime
+ // so we are telling it to look for the #datetime id in the html tags
+ // by chaining .property('value') to d3.select we are saying look where date values are stored on the page
+ // but grab the information and hold it in the date variable
+ // next we set default filter and save to new variable.
+ // our default filter is the original table data so users can refine their searches
+    function handleClick() {
+        let date = d3.select("#datetime").property("value");
+        let filteredData = tableData;
+        if (date) {
+            filteredData = filteredData.filter(row => row.datetime === date);
+    };
+
+    // Rebuild the table using filtered data
+    //@NOTE: If no date was entered, then filteredData will be original tableData.
+    buildTable(filteredData);
+};
+// link code to filter-btn; .on(click, handleclick) is telling D3 to execute the handleclick function when the button is clicked
+// Attach an event to listen for the form button
+d3.selectAll("#filter-btn").on("click", handleClick);
+// call original function so readers see original table to know how to filter
+//Build table when page loads
+buildTable(tableData);
