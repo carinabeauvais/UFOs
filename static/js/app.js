@@ -11,7 +11,7 @@ var tbody = d3.select("tbody");
 //Add function to clear existing filters
 function buildTable(data) {
     tbody.html("");
-  }
+  
 // Add forEach function
   data.forEach((dataRow) => {
     // create variable to append a row to the table body; find tbody tag and add a table row 'tr'.
@@ -30,7 +30,7 @@ function buildTable(data) {
         }
     );
 });
-
+}
 //full function without hints
 //data.forEach((dataRow) => {
     //let row = tbody.append("tr");
