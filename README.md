@@ -6,6 +6,7 @@ The goal is to create an interactive webpage that allows readers to parse the da
 ### Results
 To utilize this page, simply fill in one of the filter features based on city, state, country or shape to filter the data to show what you would like to see.
 For example, if we wanted to look at all UFO sightings that were shaped like a circle we would fill in the shape to show circle and filter the data to get the following result:
+![filterbycircles](https://user-images.githubusercontent.com/96350410/156940206-0598547c-d687-4da7-a766-183560834f1f.png)
 
 #### Summary
 One drawback of this webpage is that we had to define the columns and rows manually and to update the page you have to hit the Enter key.
